@@ -1,0 +1,63 @@
+.banner {
+	height: 370px;
+	background: url(../../assets/imgs/banner.jpg) center / cover;
+	display: grid;
+	place-items: center;
+}
+.banner h1 {
+	width: 500px;
+	text-align: center;
+	font-size: 2.8rem;
+	color: black;
+}
+.stuffs-container {
+	max-width: 940px;
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 300px);
+	grid-gap: 12px;
+	justify-content: center;
+}
+
+.stuff {
+	width: 280px;
+	height: 280px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-decoration: none;
+	transition: 500ms;
+}
+.stuff:hover {
+	transform: scale(1.1)
+}
+.stuff img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.stuff .detail {
+	background: rgba(0,0,0,.5);
+	padding: 20px;
+}
+.stuff-name, .stuff-price {
+	color: #eee;
+	margin-bottom: 15px;
+	font-size: 1.8rem;
+	text-align: center;
+}
+.stuff-price::after {
+	content: ' Fcfa'
+}
+
+/* loader */
+.loader {
+	text-align: center;
+	margin-top: 15px;
+	font-size: 2.4rem;
+	font-weight: 600;
+}

@@ -1,0 +1,21 @@
+.default-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.part {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	color: #eee;
+	font-size: 1.6rem;
+	font-weight: 600;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #666;
+	margin: 0 20px;
+	text-transform: uppercase;
+}

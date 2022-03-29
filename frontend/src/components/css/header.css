@@ -1,0 +1,23 @@
+header {
+	
+	padding: 0 20px;
+}
+nav {
+	display: flex;
+	height: 70px;
+	align-items: center;
+	justify-content: space-between;
+}
+nav a {
+	text-decoration: none;
+	color: #444;
+	font-size: 1.4rem;
+	padding: 10px 14px;
+}
+nav .middle a{
+	margin: 0 20px;
+}
+.selected {
+	background-color: dodgerblue;
+	color: #eee;
+}
