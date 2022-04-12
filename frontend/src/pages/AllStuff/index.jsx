@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 
-import './css/all-stuff.css';
+import './allStuff.css';
 
 const data = [
 	{name: 'first stuff', price: 487, description: 'some random description', img:'../assets/images/lunch_1.jpg', _id: 1},
@@ -58,7 +57,6 @@ const Stuffs = () => {
 const All_stuff = () => {
 	return (
 		<div className="all-stuff">
-			<Header />
 			<div className="banner">
 				<h1>le meilleur endroit pour vendre vos objets</h1>
 			</div>

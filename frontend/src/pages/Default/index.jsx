@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
 
-import './css/default.css';
+import './default.css';
 
 const Default = () => {
+	
+	
 	return (
 		<div className="default-page">
 			<Link to="/part-one/all-stuff" className="part">part one</Link>
