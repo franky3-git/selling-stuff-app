@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import useFetch from '../../../useFetch';
+import Loading from '../../../components/Loading';
+import axios from 'axios'
 
 import './allStuff.css';
 
@@ -9,10 +12,12 @@ const data = [
 	{name: 'third stuff', price: 485, description: 'some random description for the third thing', img:'../assets/images/lunch_3.jpg', _id: 2}
 ];
 
+const url = 'http://localhost:5000/api/things';
+
 
 const Stuff = ({img, name, price}) => {
 	return (
-		<Link to='/part-one/single-thing' className="stuff">
+		<Link to='/part-one/single-thing/:id' className="stuff">
 			<img src={img} alt="img-thing"/>
 			<div className="detail">
 				<h3 className="stuff-name">{name}</h3>
@@ -24,26 +29,20 @@ const Stuff = ({img, name, price}) => {
 
 
 const Stuffs = () => {
-	const [stuffs, setStuffs] = useState([])
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(false)
-	
-	useEffect(() => {
-		setTimeout(() => {
-			setStuffs(data);
-			setLoading(false)
-		}, 3000)
-	}, [])
+	const [stuffs, loading, error, errorMessage] = useFetch()
 	
 	if(loading) {
 		return (
-			<div className="loader"></div>
+			<Loading />
 		)	
 	}
 	
 	if(error) {
 		return (
-			<div className="loader">Some error when fetching datas</div>
+			<div className="error">
+				<p>Some error when fetching datas</p>
+				<p>{errorMessage}</p>
+			</div>
 		)
 	}
 	

@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {Link, useParams} from 'react-router-dom';
+import axios from 'axios';
+import useFetch from '../../../useFetch';
 
 import './singleThing.css';
 
-const Thing = () => {
-	const [thing, setThing] = useState({name: 'first stuff', price: 487, description: 'some random description', img:'../assets/images/lunch_1.jpg', _id: 1})
+const url = 'http://localhost:5000/api/thing'
+
+const Thing = ({id}) => {
+	const [thing, setThing] = useState({})
+	
+	const [stuffs, loading, error, errorMessage] = useFetch(`${url}/${id}`);
+	
+	useEffect(() => {
+		setThing(stuffs)
+	})
+	
+	if(loading) {
+		return (
+			<div className="loader"></div>
+		)
+	}
+	
+	if(error) {
+		return <div className="error">{errorMessage}</div>
+	}
 	
 	return (
 		<div className="thing" id={`thing-${thing._id}`}>
@@ -20,9 +40,11 @@ const Thing = () => {
 
 const SingleThing = () => {
 	
+	const {id} = useParams();
+	
 	return (
 		<div className="singleThing">
-			<Thing />
+			<Thing id={id} />
 			<div className="btns">
 				<Link to='/part-one/update-thing' className="btn btn-update">modifier</Link>
 				<Link className="btn btn-delete">supprimer</Link>
