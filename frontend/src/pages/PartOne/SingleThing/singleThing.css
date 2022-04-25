@@ -1,0 +1,37 @@
+.btns {
+	margin: 30px auto;
+	max-width: 400px;
+	text-align: center;
+}
+.btn {
+	padding: 7px 15px;
+	color: #eee;
+	margin-left: 15px;
+	border-radius: 4px;
+	border: none;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+.btn-delete {
+	background-color: red;
+}
+.btn-update {
+	background-color: dodgerblue;
+}
+.thing {
+	max-width: 400px;
+	margin: 10px auto;
+}
+.thing img{
+	width: 100%;
+}
+p {
+	font-size: 1.3rem;
+}
+.details {
+	display: flex;
+	justify-content: space-between;
+}
+.price::before {
+	content: ' Fcfa'
+}

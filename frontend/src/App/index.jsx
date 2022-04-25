@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Default from '../pages/Default';
 import Error404 from '../pages/Error404';
 import PartOne from '../pages/PartOne'

@@ -1,6 +1,6 @@
 .banner {
 	height: 370px;
-	background: url(../../assets/imgs/banner.jpg) center / cover;
+	background: url(../../../assets/imgs/banner.jpg) center / cover;
 	display: grid;
 	place-items: center;
 }
@@ -55,9 +55,36 @@
 }
 
 /* loader */
-.loader {
+.error {
 	text-align: center;
 	margin-top: 15px;
 	font-size: 2.4rem;
 	font-weight: 600;
+}
+
+.loader {
+	width: 100%;
+	position: fixed;
+	top: 440px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loader::after {
+	content: '';
+	width: 200px;
+	height: 200px;
+	border: solid 20px transparent;
+	border-top-color: dodgerblue;
+	border-radius: 50%;
+	animation: loading 0.8s ease infinite;
+}
+@keyframes loading {
+	0% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
 }

@@ -12,7 +12,7 @@ const data = [
 
 const Stuff = ({img, name, price}) => {
 	return (
-		<Link to='/singleThing' className="stuff">
+		<Link to='/part-one/single-thing' className="stuff">
 			<img src={img} alt="img-thing"/>
 			<div className="detail">
 				<h3 className="stuff-name">{name}</h3>
@@ -29,10 +29,17 @@ const Stuffs = () => {
 	const [error, setError] = useState(false)
 	
 	useEffect(() => {
-		
-		setStuffs(data);
-		setLoading(false)
+		setTimeout(() => {
+			setStuffs(data);
+			setLoading(false)
+		}, 3000)
 	}, [])
+	
+	if(loading) {
+		return (
+			<div className="loader"></div>
+		)	
+	}
 	
 	if(error) {
 		return (
@@ -40,17 +47,10 @@ const Stuffs = () => {
 		)
 	}
 	
-	if(loading) {
-		return (
-			<div className="loader">Loading...</div>
-		)	
-	}
-	
 	return (
 		<div className="stuffs-container">
 			{stuffs.map(thing => <Stuff key={thing._id} {...thing} />)}
 		</div>
-		
 	)
 }
 
