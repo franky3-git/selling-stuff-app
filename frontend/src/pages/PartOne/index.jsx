@@ -5,6 +5,7 @@ import AllStuff from './AllStuff';
 import NewThing from './NewThing';
 import SingleThing from './SingleThing';
 import UpdateThing from './UpdateThing';
+import Error404 from '../Error404';
 
 
 const PartOne = () => {
@@ -26,6 +27,9 @@ const PartOne = () => {
 				</Route>
 				<Route exact path={`${path}/update-thing/:id`}>
 					<UpdateThing />
+				</Route>
+				<Route >
+					<Error404 />
 				</Route>
 			</Switch>
 		</div>
