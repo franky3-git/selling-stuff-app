@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 import './newthing.css'
 
@@ -12,9 +13,12 @@ const All_stuff = () => {
 		e.preventDefault();
 		
 		console.log(formValues);
+		axios.post(url, {...formValues})
+		.then(response => console.log(response.data))
+		.catch(err => console.log(err.response))
+		
 		setFormValues({title: '', price: '', description:'', url:''})
 	}
-	
 	
 	return (
 		<div className="all-stuff">

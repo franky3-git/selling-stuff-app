@@ -5,7 +5,7 @@ import useFetch from '../../../useFetch';
 
 import './singleThing.css';
 
-const url = 'http://localhost:5000/api/thing'
+const url = 'http://localhost:5000/api/things'
 
 const Thing = ({id}) => {
 	const [thing, setThing] = useState({})
@@ -23,7 +23,7 @@ const Thing = ({id}) => {
 	}
 	
 	if(error) {
-		return <div className="error">{errorMessage}</div>
+		return <div className="error all">{errorMessage}</div>
 	}
 	
 	return (
@@ -42,12 +42,19 @@ const SingleThing = () => {
 	
 	const {id} = useParams();
 	
+	const deleteThing = (id) => {
+		console.log("working")
+		axios.delete(`http://localhost:5000/api/things/${id}`)
+		.then(response => console.log(response.data))
+		.catch(err => console.log(err.response))
+	}
+	
 	return (
 		<div className="singleThing">
 			<Thing id={id} />
 			<div className="btns">
-				<Link to='/part-one/update-thing' className="btn btn-update">modifier</Link>
-				<Link className="btn btn-delete">supprimer</Link>
+				<Link to={`/part-one/update-thing/${id}`} className="btn btn-update">modifier</Link>
+				<button onClick={() => deleteThing(id)} className="btn btn-delete">supprimer</button>
 			</div>
 		</div>
 	)

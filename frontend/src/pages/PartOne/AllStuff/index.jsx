@@ -6,12 +6,6 @@ import axios from 'axios'
 
 import './allStuff.css';
 
-const data = [
-	{name: 'first stuff', price: 487, description: 'some random description', img:'../assets/images/lunch_1.jpg', _id: 1},
-	{name: 'second stuff', price: 784, description: 'some random description for the seconde thing', img:'../assets/images/lunch_2.jpg', _id: 3},
-	{name: 'third stuff', price: 485, description: 'some random description for the third thing', img:'../assets/images/lunch_3.jpg', _id: 2}
-];
-
 const url = 'http://localhost:5000/api/things';
 
 

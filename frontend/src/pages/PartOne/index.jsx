@@ -21,10 +21,10 @@ const PartOne = () => {
 				<Route exact path={`${path}/new-thing`}>
 					<NewThing />
 				</Route>
-				<Route exact path={`${path}/single-thing`}>
+				<Route exact path={`${path}/single-thing/:id`}>
 					<SingleThing />
 				</Route>
-				<Route exact path={`${path}/update-thing`}>
+				<Route exact path={`${path}/update-thing/:id`}>
 					<UpdateThing />
 				</Route>
 			</Switch>
